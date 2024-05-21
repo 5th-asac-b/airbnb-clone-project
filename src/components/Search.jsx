@@ -1,73 +1,87 @@
-import React from 'react'
+import group from '../assets/Group.svg'
 import group2 from '../assets/Group2.svg'
 
 const Search = () => {
   return (
-    <>
-      <div className='relative w-full'>
-        <nav className='absolute left-1/2 transform -translate-x-1/2 top-[70px] lg:top-3'>
-          <ul className='flex justify-center gap-4'>
-            <li>
-              <a href='/'>숙소</a>
-            </li>
-            <li>
-              <a href='/'>체험</a>
-            </li>
-            <li>
-              <a href='/'>온라인 체험</a>
-            </li>
-          </ul>
-        </nav>
+    // <div className='fixed top-5 left-0 w-full bg-white z-50'>
+    //   <div className='relative w-full max-w-screen-lg mx-auto px-4'>
+    //     <div className='w-full h-12 bg-white rounded-full flex items-center search-shadow px-4'>
+    //       <button className='flex justify-center items-center rounded-full'>
+    //         <img src={group} alt='검색 버튼' />
+    //       </button>
 
-        <div className='absolute left-1/2 transform -translate-x-1/2 top-[130px] lg:top-[70px] rounded-[500px] search-shadow'>
-          <div className='h-[63px] px-1.5 bg-white rounded-[500px] justify-center items-center gap-px flex items-center'>
-            <div className='w-[209px]'>
-              <label className='px-6 bg-white rounded-tl-[500px] rounded-bl-[500px] flex-col justify-center items-start gap-1 inline-flex'>
-                <div className="text-neutral-800 text-xs font-['SF Pro']">여행지</div>
-                <input
-                  className="text-neutral-500 text-sm font-normal font-['SF Pro']"
-                  placeholder='여행지 검색'
-                />
-              </label>
-            </div>
+    //       <div className='flex w-full ml-4'>
+    //         <button className='flex-1 text-neutral-800 text-sm font-medium border-r border-gray-200'>
+    //           Anywhere
+    //         </button>
 
-            <div className='w-[25px] h-[0px] rotate-90 border border-solid border-gray-200'></div>
+    //         <button className='flex-1 text-neutral-800 text-sm font-medium border-r border-gray-200'>
+    //           Any week
+    //         </button>
 
-            <div className='w-[129px] px-6 bg-white flex-col justify-start items-start gap-1 inline-flex'>
-              <div className="text-neutral-800 text-xs font-['SF Pro']">체크인</div>
-              <input
-                className="text-neutral-500 text-sm font-normal font-['SF Pro']"
-                placeholder='날짜 추가'
-              />
-            </div>
+    //         <button className='flex-1 text-zinc-600 text-sm font-normal'>Add guests</button>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
 
-            <div className='w-[25px] h-[0px] rotate-90 border border-solid border-gray-200'></div>
+    <div className='relative w-full'>
+      <nav className='absolute left-1/2 transform -translate-x-1/2 top-16 lg:top-3'>
+        <ul className='flex justify-center gap-4'>
+          <li>
+            <a href='/'>숙소</a>
+          </li>
+          <li>
+            <a href='/'>체험</a>
+          </li>
+          <li>
+            <a href='/'>온라인 체험</a>
+          </li>
+        </ul>
+      </nav>
 
-            <div className='w-[129px] px-6 bg-white flex-col justify-center items-start gap-1 inline-flex'>
-              <div className="text-neutral-800 text-xs font-['SF Pro']">체크아웃</div>
-              <input
-                className="text-neutral-500 text-sm font-normal font-['SF Pro']"
-                placeholder='날짜 추가'
-              />
-            </div>
-
-            <div className='w-[25px] h-[0px] rotate-90 border border-solid border-gray-200'></div>
-
-            <div className='w-[209px] px-6 bg-white flex-col justify-center items-start gap-1 inline-flex'>
-              <div className="text-neutral-800 text-xs font-['SF Pro']">여행자</div>
-              <input
-                className="text-neutral-500 text-sm font-normal font-['SF Pro']"
-                placeholder='게스트 추가'
-              />
-            </div>
-
-            <div className='w-12 h-12 absolute right-3'>
-              <img src={group2} />
-            </div>
+      <div className='absolute left-1/2 transform -translate-x-1/2 top-32 lg:top-20 w-full lg:max-w-4xl rounded-full search-shadow bg-white'>
+        <div className='flex items-center h-16 px-2'>
+          <div className='flex items-center w-52 px-6 rounded-l-full'>
+            <label className='flex flex-col'>
+              <span className='text-neutral-800 text-xs'>여행지</span>
+              <input className='text-neutral-500 text-sm' placeholder='여행지 검색' />
+            </label>
           </div>
+
+          <div className='h-2/5 border border-solid border-gray-200'></div>
+
+          <div className='flex items-center w-32 px-6'>
+            <label className='flex flex-col'>
+              <span className='text-neutral-800 text-xs'>체크인</span>
+              <input className='text-neutral-500 text-sm' placeholder='날짜 추가' />
+            </label>
+          </div>
+
+          <div className='h-2/5 border border-solid border-gray-200'></div>
+
+          <div className='flex items-center w-32 px-6'>
+            <label className='flex flex-col'>
+              <span className='text-neutral-800 text-xs'>체크아웃</span>
+              <input className='text-neutral-500 text-sm' placeholder='날짜 추가' />
+            </label>
+          </div>
+
+          <div className='h-2/5 border border-solid border-gray-200'></div>
+
+          <div className='flex items-center w-52 px-6 rounded-r-full'>
+            <label className='flex flex-col'>
+              <span className='text-neutral-800 text-xs'>여행자</span>
+              <input className='text-neutral-500 text-sm' placeholder='게스트 추가' />
+            </label>
+          </div>
+
+          <button className='absolute right-3 w-12 h-12'>
+            <img src={group2} alt='검색 버튼' />
+          </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

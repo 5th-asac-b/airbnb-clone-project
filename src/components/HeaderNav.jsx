@@ -3,32 +3,20 @@ import Search from './Search'
 import HeaderLogo from '../assets/airbnbLogo.svg'
 import language from '../assets/language.svg'
 import account from '../assets/account.svg'
+import menu from '../assets/menu.svg'
 
 const HeaderNav = () => {
   return (
-    <header className='my-5 '>
+    <header className='my-5 fixed top-0 left-0 w-full bg-white z-50'>
       <div className='containers relative'>
         <Search />
+
         <div className='header-container'>
           <div className='header-logo'>
             <a href='/'>
               <img src={HeaderLogo} alt='에어비앤비 로고입니다.' />
             </a>
           </div>
-
-          {/* <nav className='header-nav w-1/3 flex justify-center'>
-            <ul>
-              <li>
-                <a href='/'>숙소</a>
-              </li>
-              <li>
-                <a href='/'>체험</a>
-              </li>
-              <li>
-                <a href='/'>온라인 체험</a>
-              </li>
-            </ul>
-          </nav> */}
 
           <div className='header-more flex justify-end '>
             {/* <a href='#'>More Btn</a> */}
@@ -45,7 +33,7 @@ const HeaderNav = () => {
 
               <button className='w-auto h-auto py-1 px-2 bg-white rounded-[29px] border border-gray-300 relative flex items-center'>
                 <div className='flex-col justify-start items-start gap-1 inline-flex'>
-                  {/* <img src={menu} /> */}
+                  <img src={menu} />
                 </div>
 
                 <div className='w-8 h-[34px] relative ml-4 flex items-center'>
