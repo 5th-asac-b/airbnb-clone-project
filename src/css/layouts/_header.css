@@ -1,0 +1,38 @@
+header {
+  width: 100%;
+}
+.containers {
+  width: 100%;
+  padding: 0 5vw;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav {
+  width: auto;
+}
+.header-nav > ul {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.header-nav > ul > li {
+}
+.header-nav > ul > li > a {
+  font-size: 14px;
+  padding: 10px 16px;
+  transition: ease all 0.3s;
+}
+.header-nav > ul > li > a:hover {
+}
+
+.header-more {
+}
+.header-more > a {
+}
