@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         'sf-pro': ['"SF Pro"', 'sans-serif'],
       },
+      colors: {
+        hostSectionBackground: '#F0EFE9',
+      },
     },
   },
   plugins: [
