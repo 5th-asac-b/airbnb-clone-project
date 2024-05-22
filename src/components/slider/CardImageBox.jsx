@@ -16,7 +16,7 @@ export default function CardImageBox({images}) {
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
         }}
-        cssMode={true}
+        
         spaceBetween={20}
         slidesPerView={1}                      
         lazy={true}
@@ -25,11 +25,13 @@ export default function CardImageBox({images}) {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="w-full max-w-md mx-auto "
+        className="w-full max-w-md mx-auto"
       >
         {images.map((src, index) => (
-        <SwiperSlide key={index} className="flex justify-center items-center h-40">
-          <img src={src} loading="lazy" className="w-full h-full object-cover" alt={`Slide ${index}`} />
+        <SwiperSlide key={index} className="flex justify-center items-center">
+          <div className="w-full aspect-w-20 aspect-h-19">
+          <img src={src} loading="lazy" className="w-full h-full object-cover rounded-xl" alt={`${index+1}번 이미지 입니다`} />
+          </div>
         </SwiperSlide>
       ))}
       </Swiper>
