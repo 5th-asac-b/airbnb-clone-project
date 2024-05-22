@@ -1,10 +1,13 @@
-import Cards from './components/Cards'
-import HeaderNav from './components/HeaderNav'
+import DetailGallery from './components/DetailGallery'
+import Layout from './components/Layout'
 
 function App() {
   return (
     <>
-      <HeaderNav />
+      <Layout>
+        <DetailGallery />
+        {/* 메인 화면에 집어넣을 컴포넌트 작성. ex) <DetailGallery /> */}
+      </Layout>
     </>
   )
 }
