@@ -3,7 +3,7 @@ import imageData from '../assets/imageData.json'
 
 const DetailGallery = () => {
   return (
-    <div className='p-2'>
+    <div className='px-20 pt-6'>
       <div className='flex gap-2'>
         <div className='flex-1'>
           <div className='h-full'>
