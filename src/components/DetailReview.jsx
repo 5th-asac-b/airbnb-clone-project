@@ -77,7 +77,8 @@ const DetailReview = () => {
   }
 
   return (
-    <div className='px-20 py-12 bg-white shadow-lg rounded-lg'>
+    <div className='py-12 bg-white'>
+      <div className='xl:grid xl:grid-cols-2'></div>
       <div className='text-left mb-8'>
         <h1 className='text-[22px]'>
           ★ {calculateAverageRating()} · 후기 {reviews.length}개
@@ -108,15 +109,12 @@ const DetailReview = () => {
           <span className='text-2xl font-semibold'>위치</span>
           <div className='text-gray-600'>5.0</div>
         </div>
-        <div className='flex flex-col items-center'>
-          <span className='text-2xl font-semibold'>가격 대비 만족도</span>
-          <div className='text-gray-600'>5.0</div>
-        </div> 
+   
         
         없어도 괜찮을 것 같음.
         */}
       </div>
-      <div className='space-y-8'>
+      <div className='space-y-8 xl:grid xl:grid-cols-2 xl:gap-y-10 xl:gap-x-20 xl:space-y-0'>
         {reviews.map((review) => (
           <div key={review.id} className='border-b border-gray-300 pb-8'>
             <div className='flex items-center space-x-4'>

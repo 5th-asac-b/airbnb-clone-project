@@ -10,7 +10,7 @@ const DetailGallery = () => {
             <img
               src={imageData.mainImage}
               alt='Main'
-              className='w-full h-full object-cover rounded-l-lg'
+              className='w-full h-full object-cover rounded-l-2xl'
             />
           </div>
         </div>
@@ -20,7 +20,7 @@ const DetailGallery = () => {
               <img
                 src={src}
                 alt={`Sub ${index + 1}`}
-                className={`absolute inset-0 w-full h-full object-cover ${index === 1 ? 'rounded-tr-lg' : ''} ${index === 3 ? 'rounded-br-lg' : ''}`}
+                className={`absolute inset-0 w-full h-full object-cover ${index === 1 ? 'rounded-tr-2xl' : ''} ${index === 3 ? 'rounded-br-2xl' : ''}`}
               />
             </div>
           ))}

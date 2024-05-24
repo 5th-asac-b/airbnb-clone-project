@@ -2,8 +2,8 @@ import React from 'react'
 
 const DetailSubTitle = () => {
   return (
-    <div className=''>
-      <div className='py-8'>
+    <>
+      <div className='pb-8'>
         <div className='text-left'>
           <h2 className='text-[22px]'>가평군, 한국의 저택 전체</h2>
           <p className='text-[16px] text-gray-600'>최대 인원 8명 · 침실 3개 · 욕실 3.5개</p>
@@ -14,7 +14,7 @@ const DetailSubTitle = () => {
         </div>
       </div>
       <hr></hr>
-    </div>
+    </>
   )
 }
 
