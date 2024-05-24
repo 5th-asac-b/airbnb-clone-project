@@ -11,7 +11,7 @@ const features = [
 
 const DetailFeatures = () => {
   return (
-    <div className='px-20'>
+    <div className=''>
       <div className='py-8'>
         <div className='grid grid-cols-2 gap-y-1'>
           {features.map((feature, index) => (

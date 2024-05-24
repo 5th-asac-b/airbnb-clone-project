@@ -1,18 +1,17 @@
-import React from 'react'
 import HeaderLogo from '../assets/airbnbLogo.svg'
 import language from '../assets/language.svg'
 import account from '../assets/account.svg'
 import menu from '../assets/menu.svg'
 
 const HeaderContent = () => (
-  <div className='relative grid grid-cols-3 items-center '>
+  <div className='relative grid grid-cols-3 items-center'>
     <div>
       <a href='/'>
         <img src={HeaderLogo} alt='에어비앤비 로고입니다.' />
       </a>
     </div>
 
-    <nav>
+    <nav className='header-nav'>
       <ul className='flex justify-center gap-4'>
         <li>
           <a href='/'>숙소</a>

@@ -81,7 +81,7 @@ function FooterComponent() {
   const [activeTab, setActiveTab] = useState('popular')
 
   return (
-    <footer className='bg-gray-100 py-10 padding-all'>
+    <footer className='bg-gray-100 py-10'>
       <div className='container mx-auto px-4'>
         <div className='mb-8'>
           <h5 className='text-xl font-bold mb-4'>다음 여행을 위한 추천 여행지</h5>
