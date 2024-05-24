@@ -1,13 +1,22 @@
-import DetailGallery from './components/DetailGallery'
 import Layout from './components/Layout'
+import ReservationComponent from './components/ReservationComponent'
+import Grid from './components/slider/Grid'
+import DetailLayout from './components/DetailLayout'
 
+const ListPage = () => {
+  return (
+    <>
+      <Layout padding={'main-padding-list'}>
+        <Grid />
+      </Layout>
+    </>
+  )
+}
 function App() {
   return (
     <>
-      <Layout>
-        <DetailGallery />
-        {/* 메인 화면에 집어넣을 컴포넌트 작성. ex) <DetailGallery /> */}
-      </Layout>
+      {/* <ListPage /> */}
+      <DetailLayout />
     </>
   )
 }

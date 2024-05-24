@@ -1,16 +1,18 @@
 import { children } from 'react'
 import HeaderNav from './HeaderNav'
 import FooterComponent from './FooterComponent'
+import Categories from './Categories/Categories'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, padding }) => {
   return (
-    <div className='flex flex-col'>
-      <HeaderNav />
-      <main className='flex justify-center my-5 w-full'>
-        <div className=' padding-all'>{children}</div>
-      </main>
+    <>
+      <div className={`flex flex-col ${padding}`}>
+        <HeaderNav />
+        <Categories />
+        <main className='my-5 w-full flex justify-center'>{children}</main>
+      </div>
       <FooterComponent />
-    </div>
+    </>
   )
 }
 export default Layout

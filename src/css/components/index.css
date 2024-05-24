@@ -2,7 +2,12 @@
 @import './_category.css';
 @import './_searchBar.css';
 
-.padding-all {
-  padding: 0 clamp(min(10vw, 20rem), 5vw, max(100%, 55rem));
+.main-padding-detail {
+  padding: 0 clamp(min(10vw, 20rem), 5vw, max(100%, 100rem));
+  transition: padding 0.3s ease;
+}
+
+.main-padding-list {
+  padding: 0 clamp(min(1vw, 20rem), 5vw, max(100%, 55rem));
   transition: padding 0.3s ease;
 }

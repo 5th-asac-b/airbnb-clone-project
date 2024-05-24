@@ -3,7 +3,7 @@ import HeaderContent from './HeaderContent'
 
 const HeaderNav = () => {
   return (
-    <header className='py-5 bg-white padding-all'>
+    <header className={`py-5 bg-white`}>
       <HeaderContent />
       <Search />
     </header>
