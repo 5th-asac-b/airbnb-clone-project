@@ -2,7 +2,7 @@ import React from 'react'
 
 const DetailSubTitle = () => {
   return (
-    <div className='px-20'>
+    <div className=''>
       <div className='py-8'>
         <div className='text-left'>
           <h2 className='text-[22px]'>가평군, 한국의 저택 전체</h2>

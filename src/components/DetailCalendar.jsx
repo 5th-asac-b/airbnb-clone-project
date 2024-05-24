@@ -33,7 +33,7 @@ const DetailCalendar = () => {
   const nextMonth = addMonths(currentMonth, 1)
 
   return (
-    <div className='px-20 py-12 bg-white shadow-lg rounded-lg'>
+    <div className='bg-white rounded-lg'>
       <div className='text-left mb-4'>
         <h1 className='text-[22px]'>가평군에서 {calculateNights()}박</h1>
         {checkInDate && checkOutDate ? (
