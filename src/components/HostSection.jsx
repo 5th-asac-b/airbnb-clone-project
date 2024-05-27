@@ -7,14 +7,11 @@ import safePurchasingSvg from '../assets/safepurchasing.svg'
 */
 function HostProfile({ imgSrc, name, description }) {
   // NOTE : 호스트 프로필 - 호스트 사진, 이름, 설명이고
-  // 여기서 설명은 일단 '호스트'로 우선은 고정
+  // TODO : description은 슈퍼호스트냐 아니냐에 따라서 '슈퍼호스트', '호스트'로 구분
+
   return (
     <div className='flex flex-col items-center'>
-      <img
-        src={imgSrc}
-        alt='Host'
-        className='w-32 h-32 object-cover rounded-full mb-4'
-      />
+      <img src={imgSrc} alt='Host' className='w-32 h-32 object-cover rounded-full mb-4' />
       <h2 className='font-bold text-2xl mb-1'>{name}</h2>
       <p className='text-sm text-gray-600'>{description}</p>
     </div>
@@ -50,16 +47,29 @@ function SafePaymentNotice() {
   return (
     <div className='mt-4 flex items-center'>
       <img src={safePurchasingSvg} alt='Safe Purchasing' className='w-12 h-12 mr-2' />
-      <p className='text-xs'>안전한 결제를 위해 에어비앤비 웹사이트나 앱 외부에서 송금하거나 대화를 나누지 마세요.</p>
+      <p className='text-xs'>
+        안전한 결제를 위해 에어비앤비 웹사이트나 앱 외부에서 송금하거나 대화를 나누지 마세요.
+      </p>
     </div>
   )
-} 
+}
 
-function NoSuperHostDetails({ responseRate, responseTime }) {
+function HostDetail({ responseRate, responseTime, isSuperHost, name }) {
   // NOTE : 슈퍼 호스트가 아닐 때 띄워줄 컴포넌트
   // TODO : 메시지 보내기 기능?
+  // TODO : 슈퍼호스트일 때 컴포넌트 정보 바뀌어야 함
+  // FIXME : 슈퍼호스트 텍스트 넣을 때 호스트 카드 찌그러지는 문제
   return (
     <>
+      {isSuperHost && (
+        <div className='mb-4'>
+          <h3 className='text-l font-bold mb-2'>{name}님은 슈퍼호스트입니다.</h3>
+          <p>
+            슈퍼호스트는 풍부한 경험과 높은 평점을 자랑하며 게스트가 숙소에서 편안히 머무를 수
+            있도록 최선을 다하는 호스트입니다.
+          </p>
+        </div>
+      )}
       <h3 className='text-xl font-bold mb-2'>호스트 상세 정보</h3>
       <p>응답률: {responseRate}</p>
       <p>{responseTime}</p>
@@ -67,7 +77,7 @@ function NoSuperHostDetails({ responseRate, responseTime }) {
       <hr className='mt-4 mb-4 border-gray-300' />
     </>
   )
-} 
+}
 
 // TODO : 슈퍼 호스트일 때의 Detail 정보 만들기
 
@@ -75,7 +85,7 @@ function HostSection() {
   // TODO : 거주지에 address 넣는 부분, 더보기 버튼
   const hostData = {
     address: '가평군, 한국',
-    isSuperHost: false,
+    isSuperHost: true,
     name: 'Sahee',
     rating: 5,
     reviews: 3,
@@ -91,17 +101,29 @@ function HostSection() {
       <h2 className='text-2xl font-bold mb-5'>호스트 소개</h2>
       <div className='max-w-4xl w-full bg-hostSectionBackground pt-10 px-6 pb-6 rounded-3xl shadow-lg flex'>
         <div
-          className='bg-white p-6 rounded-3xl shadow-lg flex items-center focus:outline-none w-1/3'
+          className='bg-white p-6 rounded-3xl shadow-lg flex items-center focus:outline-none w-1/3 max-w-md mx-auto'
           role='link'
           tabIndex='0'
         >
-          <HostProfile imgSrc={hostData.imgSrc} name={hostData.name} description="호스트" />
-          <HostInfo reviews={hostData.reviews} rating={hostData.rating} hostingYears={hostData.hostingYears} />
+          <HostProfile
+            imgSrc={hostData.imgSrc}
+            name={hostData.name}
+            description={hostData.isSuperHost ? '슈퍼호스트' : '호스트'}
+          />
+          <HostInfo
+            reviews={hostData.reviews}
+            rating={hostData.rating}
+            hostingYears={hostData.hostingYears}
+          />
         </div>
         <div className='flex-grow ml-8'>
-          {!hostData.isSuperHost && (
-            <NoSuperHostDetails responseRate={hostData.responseRate} responseTime={hostData.responseTime} />
-          )}
+          <HostDetail
+            responseRate={hostData.responseRate}
+            responseTime={hostData.responseTime}
+            isSuperHost={hostData.isSuperHost}
+            name={hostData.name}
+          />
+
           <SafePaymentNotice />
         </div>
       </div>
