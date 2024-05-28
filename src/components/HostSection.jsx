@@ -63,7 +63,7 @@ function HostDetail({ responseRate, responseTime, isSuperHost, name }) {
     <>
       {isSuperHost && (
         <div className='mb-4'>
-          <h3 className='text-l font-bold mb-2'>{name}님은 슈퍼호스트입니다.</h3>
+          <h3 className='text-xl font-bold mb-2'>{name}님은 슈퍼호스트입니다.</h3>
           <p>
             슈퍼호스트는 풍부한 경험과 높은 평점을 자랑하며 게스트가 숙소에서 편안히 머무를 수
             있도록 최선을 다하는 호스트입니다.
@@ -85,7 +85,7 @@ function HostSection() {
   // TODO : 거주지에 address 넣는 부분, 더보기 버튼
   const hostData = {
     address: '가평군, 한국',
-    isSuperHost: true,
+    isSuperHost: true, // true일 때 : 896*384, true일 때 : 896*312
     name: 'Sahee',
     rating: 5,
     reviews: 3,
@@ -99,22 +99,22 @@ function HostSection() {
   return (
     <div className='flex flex-col justify-center p-5'>
       <h2 className='text-2xl font-bold mb-5'>호스트 소개</h2>
-      <div className='max-w-4xl w-full bg-hostSectionBackground pt-10 px-6 pb-6 rounded-3xl shadow-lg flex'>
-        <div
-          className='bg-white p-6 rounded-3xl shadow-lg flex items-center focus:outline-none w-1/3 max-w-md mx-auto'
-          role='link'
-          tabIndex='0'
-        >
-          <HostProfile
-            imgSrc={hostData.imgSrc}
-            name={hostData.name}
-            description={hostData.isSuperHost ? '슈퍼호스트' : '호스트'}
-          />
-          <HostInfo
-            reviews={hostData.reviews}
-            rating={hostData.rating}
-            hostingYears={hostData.hostingYears}
-          />
+      <div className='max-w-7xl w-full bg-hostSectionBackground pt-10 px-6 pb-6 rounded-3xl shadow-lg flex'>
+        <div className='bg-white p-6 rounded-3xl shadow-lg flex items-center justify-between w-1/2 max-w-md mx-auto'>
+          <div className='flex flex-col items-center'>
+            <HostProfile
+              imgSrc={hostData.imgSrc}
+              name={hostData.name}
+              description={hostData.isSuperHost ? '슈퍼호스트' : '호스트'}
+            />
+          </div>
+          <div className='ml-3'>
+            <HostInfo
+              reviews={hostData.reviews}
+              rating={hostData.rating}
+              hostingYears={hostData.hostingYears}
+            />
+          </div>
         </div>
         <div className='flex-grow ml-8'>
           <HostDetail
@@ -123,7 +123,6 @@ function HostSection() {
             isSuperHost={hostData.isSuperHost}
             name={hostData.name}
           />
-
           <SafePaymentNotice />
         </div>
       </div>
