@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ReviewModal from './DetailReviewModal'
 
 const DetailSubTitle = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
+
   return (
     <>
       <div className='pb-8'>
@@ -10,10 +16,13 @@ const DetailSubTitle = () => {
         </div>
         <div className='flex items-center mt-2'>
           <span className='text-black font-bold'>★ 5.0</span>
-          <button className='text-[16px] ml-2 underline'>후기 3개</button>
+          <button className='text-[16px] ml-2 underline' onClick={openModal}>
+            후기 3개
+          </button>
         </div>
       </div>
-      <hr></hr>
+      <hr />
+      {isModalOpen && <ReviewModal onClose={closeModal} />}
     </>
   )
 }
