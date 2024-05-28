@@ -82,9 +82,9 @@ const CalendarLayout = ({ currentMonth, onDateClick, selectedDates, setCurrentMo
               !isSameMonth(day, monthStart)
                 ? 'text-gray-300'
                 : isSelected
-                  ? 'bg-blue-500 text-white rounded-full'
+                  ? 'bg-black text-white rounded-full'
                   : isInRange
-                    ? 'bg-blue-200'
+                    ? 'bg-gray-100'
                     : 'text-gray-900'
             }`}
             key={day}
